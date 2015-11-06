@@ -39,8 +39,11 @@ define(function(require) {
             if (!$(event.currentTarget).hasClass('selected')) {
                 this.$('.accordion-item-title').removeClass('selected');
                 var body = $(event.currentTarget).addClass('selected visited').siblings('.accordion-item-body').slideToggle(200, function() {
-                  $(body).a11y_focus();
+                    $(body).a11y_focus();
                 });
+                ///// Audio /////
+                this.stopAudio();
+                ///// End of Audio /////
                 this.$('.accordion-item-title-icon').removeClass('icon-minus').addClass('icon-plus');
                 $('.accordion-item-title-icon', event.currentTarget).removeClass('icon-plus').addClass('icon-minus');
 
@@ -53,6 +56,10 @@ define(function(require) {
                 this.$('.accordion-item-title').removeClass('selected');
                 $(event.currentTarget).removeClass('selected');
                 $('.accordion-item-title-icon', event.currentTarget).removeClass('icon-minus').addClass('icon-plus');
+
+                ///// Audio /////
+                this.stopAudio();
+                ///// End of Audio /////
             }
             // set aria-expanded value
             if ($(event.currentTarget).hasClass('selected')) {
@@ -63,10 +70,28 @@ define(function(require) {
             }
         },
 
+        ///// Audio /////
+        stopAudio: function() {
+            if (this.model.get('_audio')) {
+                Adapt.trigger('audio:pauseAudio', this.model.get("_audio")._channel);
+            }
+        },
+        ///// End of Audio /////
+
         setVisited: function(index) {
             var item = this.model.get('_items')[index];
             item._isVisited = true;
             this.checkCompletionStatus();
+
+            ///// Audio /////
+            if (this.model.get('_audio')) {
+                // Determine which file to play
+                if (Adapt.audio.audioClip[this.model.get('_audio')._channel].canPlayType('audio/ogg')) this.audioFile = item._audio.ogg;
+                if (Adapt.audio.audioClip[this.model.get('_audio')._channel].canPlayType('audio/mpeg')) this.audioFile = item._audio.mp3;
+                // Trigger audio
+                Adapt.trigger('audio:playAudio', this.audioFile, this.model.get('_id'), this.model.get('_audio')._channel);
+            }
+            ///// End of Audio /////
         },
 
         getVisitedItems: function() {
