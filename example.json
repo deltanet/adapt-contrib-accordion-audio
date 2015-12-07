@@ -9,6 +9,11 @@
   "displayTitle": "Accordion",
   "body": "This is optional body text. Select the headings below to reveal the text.",
   "instruction": "",
+  "displayTitleReduced": "Reduced title",
+  "bodyReduced": "Reduced text",
+  "_reducedText": {
+      "_isEnabled": true
+  },
   "_audio": {
       "_isEnabled": true,
       "_showControls": true,
@@ -23,7 +28,9 @@
   "_items": [
     {
       "title": "Heading 1",
+      "titleReduced": "Reduced heading 1",
       "body": "This is display text 1.",
+      "bodyReduced": "Reduced text 1",
       "_graphic": {
         "src": "course/en/images/example.jpg",
         "alt": "accordion item 1 graphic alt text here."
@@ -35,7 +42,9 @@
     },
     {
       "title": "Heading 2",
+      "titleReduced": "Reduced heading 2",
       "body": "This is display text 2.",
+      "bodyReduced": "Reduced text 2",
       "_graphic": {
         "src": "course/en/images/example.jpg",
         "alt": "accordion item 2 graphic alt text here."
@@ -47,7 +56,9 @@
     },
     {
       "title": "Heading 3",
+      "titleReduced": "Reduced heading 3",
       "body": "This is display text 3.",
+      "bodyReduced": "Reduced text 3",
       "_graphic": {
         "src": "course/en/images/example.jpg",
         "alt": "accordion item 3 graphic alt text here."

@@ -12,10 +12,17 @@ define(function(require) {
         preRender: function() {
             // Checks to see if the accordion should be reset on revisit
             this.checkIfResetOnRevisit();
+
+            // Listen for text change on audio extension
+            this.listenTo(Adapt, "audio:changeText", this.replaceText);
         },
 
         postRender: function() {
             this.setReadyStatus();
+
+            if (this.model.get('_reducedText') && this.model.get('_reducedText')._isEnabled) {
+                this.replaceText(Adapt.audio.textSize);
+            }
         },
 
         // Used to check if the accordion should reset on revisit
@@ -104,6 +111,31 @@ define(function(require) {
             if (!this.model.get('_isComplete')) {
                 if (this.getVisitedItems().length == this.model.get('_items').length) {
                     this.setCompletionStatus();
+                }
+            }
+        },
+
+        // Reduced text
+        replaceText: function(value) {
+            // If enabled
+            if (this.model.get('_reducedText') && this.model.get('_reducedText')._isEnabled) {
+                // Change component title and body
+                if(value == 0) {
+                    this.$('.component-title-inner').html(this.model.get('displayTitle')).a11y_text();
+                    this.$('.component-body-inner').html(this.model.get('body')).a11y_text();
+                } else {
+                    this.$('.component-title-inner').html(this.model.get('displayTitleReduced')).a11y_text();
+                    this.$('.component-body-inner').html(this.model.get('bodyReduced')).a11y_text();
+                }
+                // Change each items title and body
+                for (var i = 0; i < this.model.get('_items').length; i++) {
+                    if(value == 0) {
+                        this.$('.accordion-item-title-text').eq(i).html(this.model.get('_items')[i].title);
+                        this.$('.accordion-item-body-inner').eq(i).html(this.model.get('_items')[i].body).a11y_text();
+                    } else {
+                        this.$('.accordion-item-title-text').eq(i).html(this.model.get('_items')[i].titleReduced);
+                        this.$('.accordion-item-body-inner').eq(i).html(this.model.get('_items')[i].bodyReduced).a11y_text();
+                    }
                 }
             }
         }
