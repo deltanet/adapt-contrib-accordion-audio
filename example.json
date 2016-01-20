@@ -21,8 +21,8 @@
       "_channel": 0,
       "_location": "top-right",
       "_media": {
-          "mp3": "course/en/audio/***.mp3",
-          "ogg": "course/en/audio/***.ogg"
+          "desktop": "course/en/audio/***.mp3",
+          "mobile": "course/en/audio/***.mp3"
       }
   },
   "_items": [
@@ -36,8 +36,7 @@
         "alt": "accordion item 1 graphic alt text here."
       },
       "_audio": {
-          "mp3": "course/en/audio/***.mp3",
-          "ogg": "course/en/audio/***.ogg"
+          "src": "course/en/audio/***.mp3"
       }
     },
     {
@@ -50,8 +49,7 @@
         "alt": "accordion item 2 graphic alt text here."
       },
       "_audio": {
-          "mp3": "course/en/audio/***.mp3",
-          "ogg": "course/en/audio/***.ogg"
+          "src": "course/en/audio/***.mp3"
       }
     },
     {
@@ -64,8 +62,7 @@
         "alt": "accordion item 3 graphic alt text here."
       },
       "_audio": {
-          "mp3": "course/en/audio/***.mp3",
-          "ogg": "course/en/audio/***.ogg"
+          "src": "course/en/audio/***.mp3"
       }
     }
   ]
