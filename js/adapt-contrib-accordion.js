@@ -80,6 +80,9 @@ define(function(require) {
             } else {
                 $(event.currentTarget).attr('aria-expanded', false);
             }
+            _.delay(_.bind(function() {
+                Adapt.trigger('device:resize');
+            }, this), 300);
         },
 
         ///// Audio /////
