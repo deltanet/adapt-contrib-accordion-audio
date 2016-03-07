@@ -47,11 +47,17 @@
         "help": "This is the body for reduced text"
     },
     "_reducedText": {
-      "type":"boolean",
-      "required":true,
-      "title": "Enable reduced text",
-      "inputType": { "type": "Boolean", "options": [false, true]},
-      "validators": []
+      "type":"object",
+      "required":false,
+      "properties":{
+        "_isEnabled": {
+          "type":"boolean",
+          "required":false,
+          "title": "Reduced Text Enabled",
+          "inputType": { "type": "Boolean", "options": [false, true]},
+          "validators": []
+        }
+      }
     },
     "_audio": {
       "type":"object",
