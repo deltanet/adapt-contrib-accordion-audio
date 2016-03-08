@@ -5,6 +5,8 @@
   "_component":"accordion",
   "_classes":"",
   "_layout":"left",
+  "_isOptional": true,
+  "_isCompletionRequired": false,
   "title": "Accordion",
   "displayTitle": "Accordion",
   "body": "This is optional body text. Select the headings below to reveal the text.",
