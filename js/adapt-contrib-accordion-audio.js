@@ -3,7 +3,7 @@ define(function(require) {
     var ComponentView = require('coreViews/componentView');
     var Adapt = require('coreJS/adapt');
 
-    var Accordion = ComponentView.extend({
+    var AccordionAudio = ComponentView.extend({
 
         events: {
             'click .accordion-item-title': 'toggleItem'
@@ -145,8 +145,8 @@ define(function(require) {
 
     });
 
-    Adapt.register('accordion', Accordion);
+    Adapt.register('accordion-audio', AccordionAudio);
 
-    return Accordion;
+    return AccordionAudio;
 
 });
