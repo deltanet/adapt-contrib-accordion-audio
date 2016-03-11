@@ -28,109 +28,6 @@
       "validators": [],
       "help": "This is the instruction text"
     },
-    "displayTitleReduced": {
-        "type": "string",
-        "required": false,
-        "default": "",
-        "title": "Reduced text title",
-        "inputType": "Text",
-        "validators": [],
-        "help": "This is the title for reduced text"
-    },
-    "bodyReduced": {
-        "type": "string",
-        "required": false,
-        "default": "",
-        "title": "Reduced text body",
-        "inputType": "Text",
-        "validators": [],
-        "help": "This is the body for reduced text"
-    },
-    "_reducedText": {
-      "type":"object",
-      "required":false,
-      "properties":{
-        "_isEnabled": {
-          "type":"boolean",
-          "required":false,
-          "title": "Reduced Text Enabled",
-          "inputType": { "type": "Boolean", "options": [false, true]},
-          "validators": []
-        }
-      }
-    },
-    "_audio": {
-      "type":"object",
-      "required":false,
-      "legend": "Audio",
-      "properties":{
-        "_isEnabled": {
-          "type":"boolean",
-          "required":true,
-          "title": "Enabled",
-          "inputType": { "type": "Boolean", "options": [false, true]},
-          "validators": []
-        },
-        "_showControls": {
-          "type":"boolean",
-          "required":false,
-          "title": "Show controls",
-          "inputType": { "type": "Boolean", "options": [false, true]},
-          "validators": []
-        },
-        "_autoplay": {
-          "type":"boolean",
-          "required":false,
-          "title": "Play automatically",
-          "inputType": { "type": "Boolean", "options": [false, true]},
-          "validators": []
-        },
-        "_channel": {
-          "type":"number",
-          "required":true,
-          "title": "Audio channel",
-          "minLength": 1,
-          "default": "0",
-          "inputType": "Number",
-          "validators": ["required", "number"]
-        },
-        "_location": {
-          "type":"string",
-          "required":true,
-          "enum": ["top-left", "top-right", "bottom-left", "bottom-right"],
-          "default": "top-right",
-          "title": "Set audio controls position",
-          "inputType": {"type": "Select", "options":["top-left", "top-right", "bottom-left", "bottom-right"]},
-          "validators": ["required"],
-          "help": "This tells Adapt where to position the audio controls is enabled."
-        },
-        "_media": {
-          "type":"object",
-          "required":false,
-          "title": "Audio",
-          "properties":{
-            "desktop": {
-                "type":"string",
-                "required":false,
-                "default": "",
-                "title": "Desktop MP3 Link",
-                "inputType": "Asset:audio",
-                "validators": [],
-                "help": "Link to an MP3 audio"
-            },
-            "mobile": {
-                "type":"string",
-                "required":false,
-                "default": "",
-                "title": "Mobile MP3 Link",
-                "inputType": "Asset:audio",
-                "validators": [],
-                "help": "Link to an MP3 audio"
-            }
-          }
-        }
-      }
-    },
     "_items": {
       "type": "array",
       "required": true,
@@ -211,6 +108,38 @@
               }
             }
           }
+        }
+      }
+    },
+    "_reducedText": {
+      "type":"object",
+      "required":false,
+      "title": "Reduced Text Options",
+      "help": "The Audio extension must be installed for these options to work",
+      "properties":{
+        "_isEnabled": {
+          "type":"boolean",
+          "required":false,
+          "default": "false",
+          "title": "Reduced Text Enabled",
+          "inputType": { "type": "Boolean", "options": [false, true]},
+          "validators": []
+        },
+        "displayTitleReduced": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Reduced Text Display Title",
+          "inputType": "Text",
+          "validators": []
+        },
+        "bodyReduced": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Reduced Text Body",
+          "inputType": "TextArea",
+          "validators": []
         }
       }
     }
