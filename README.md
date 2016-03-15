@@ -51,7 +51,7 @@ Body graphics are displayed only when `"layout": "full"`. On a mobile device, a 
 
 
 ----------------------------
-**Version number:**  2.0.6 
+**Version number:**  2.0.7 
 **Framework versions:** 2.0  
 **Author / maintainer:** DeltaNet (Forked from Adapt Core Team)  
 **Accessibility support:** WAI AA   

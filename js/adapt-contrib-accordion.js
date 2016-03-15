@@ -23,11 +23,6 @@ define(function(require) {
             if (this.model.get('_reducedText') && this.model.get('_reducedText')._isEnabled) {
                 this.replaceText(Adapt.audio.textSize);
             }
-
-            // Check if completion is required, if not then set status to completed
-            if (!this.model.get('_isCompletionRequired')._isEnabled) {
-                this.setCompletionStatus();
-            }
         },
 
         // Used to check if the accordion should reset on revisit
