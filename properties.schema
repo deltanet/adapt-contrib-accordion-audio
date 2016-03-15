@@ -28,6 +28,22 @@
       "validators": [],
       "help": "This is the instruction text"
     },
+    "displayTitleReduced": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Reduced Text Display Title",
+      "inputType": "Text",
+      "validators": []
+    },
+    "bodyReduced": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Reduced Text Body",
+      "inputType": "TextArea",
+      "validators": []
+    },
     "_items": {
       "type": "array",
       "required": true,
@@ -115,30 +131,14 @@
       "type":"object",
       "required":false,
       "title": "Reduced Text Options",
-      "help": "The Audio extension must be installed for these options to work",
+      "help": "The Audio extension must be installed for reduced text options to work",
       "properties":{
         "_isEnabled": {
           "type":"boolean",
           "required":false,
-          "default": "false",
+          "default": true,
           "title": "Reduced Text Enabled",
           "inputType": { "type": "Boolean", "options": [false, true]},
-          "validators": []
-        },
-        "displayTitleReduced": {
-          "type": "string",
-          "required": false,
-          "default": "",
-          "title": "Reduced Text Display Title",
-          "inputType": "Text",
-          "validators": []
-        },
-        "bodyReduced": {
-          "type": "string",
-          "required": false,
-          "default": "",
-          "title": "Reduced Text Body",
-          "inputType": "TextArea",
           "validators": []
         }
       }

@@ -131,11 +131,11 @@ define(function(require) {
                         this.$('.component-body-inner').html(this.model.get('body')).a11y_text();
                     }
                 } else {
-                    if (this.model.get('_reducedText').displayTitleReduced) {
-                        this.$('.component-title-inner').html(this.model.get('_reducedText').displayTitleReduced).a11y_text();
+                    if (this.model.get('displayTitleReduced')) {
+                        this.$('.component-title-inner').html(this.model.get('displayTitleReduced')).a11y_text();
                     }
-                    if (this.model.get('_reducedText').bodyReduced) {
-                        this.$('.component-body-inner').html(this.model.get('_reducedText').bodyReduced).a11y_text();
+                    if (this.model.get('bodyReduced')) {
+                        this.$('.component-body-inner').html(this.model.get('bodyReduced')).a11y_text();
                     }
                 }
                 // Change each items title and body
