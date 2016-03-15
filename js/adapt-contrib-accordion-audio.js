@@ -124,11 +124,19 @@ define(function(require) {
             if (Adapt.config.get('_audio') && Adapt.config.get('_audio')._isReducedTextEnabled && this.model.get('_reducedText') && this.model.get('_reducedText')._isEnabled) {
                 // Change component title and body
                 if(value == 0) {
-                    this.$('.component-title-inner').html(this.model.get('displayTitle')).a11y_text();
-                    this.$('.component-body-inner').html(this.model.get('body')).a11y_text();
+                    if (this.model.get('displayTitle')) {
+                        this.$('.component-title-inner').html(this.model.get('displayTitle')).a11y_text();
+                    }
+                    if (this.model.get('body')) {
+                        this.$('.component-body-inner').html(this.model.get('body')).a11y_text();
+                    }
                 } else {
-                    this.$('.component-title-inner').html(this.model.get('_reducedText').displayTitleReduced).a11y_text();
-                    this.$('.component-body-inner').html(this.model.get('_reducedText').bodyReduced).a11y_text();
+                    if (this.model.get('_reducedText').displayTitleReduced) {
+                        this.$('.component-title-inner').html(this.model.get('_reducedText').displayTitleReduced).a11y_text();
+                    }
+                    if (this.model.get('_reducedText').bodyReduced) {
+                        this.$('.component-body-inner').html(this.model.get('_reducedText').bodyReduced).a11y_text();
+                    }
                 }
                 // Change each items title and body
                 for (var i = 0; i < this.model.get('_items').length; i++) {
