@@ -8,6 +8,10 @@
   "main": "/js/adapt-contrib-accordion-audio.js",
   "displayName" : "Accordion Audio",
   "component" : "accordion-audio",
+  "assetFields" : [
+    "_items[]._graphic.src",
+    "_items[]._audio.src"
+  ],
   "keywords": [
     "adapt-plugin",
     "adapt-component"

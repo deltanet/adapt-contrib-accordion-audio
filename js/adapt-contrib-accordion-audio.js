@@ -25,7 +25,7 @@ define(function(require) {
             }
 
             // Check if completion is required, if not then set status to completed
-            if (!this.model.get('_isCompletionRequired')._isEnabled) {
+            if (!this.model.get('_isCompletionRequired')) {
                 this.setCompletionStatus();
             }
         },
