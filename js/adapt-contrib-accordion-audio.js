@@ -3,7 +3,7 @@ define(function(require) {
     var ComponentView = require('coreViews/componentView');
     var Adapt = require('coreJS/adapt');
 
-    var Accordion = ComponentView.extend({
+    var AccordionAudio = ComponentView.extend({
 
         events: {
             'click .accordion-item-title': 'toggleItem'
@@ -20,7 +20,7 @@ define(function(require) {
         postRender: function() {
             this.setReadyStatus();
 
-            if (this.model.get('_reducedText') && this.model.get('_reducedText')._isEnabled) {
+            if (Adapt.config.get('_audio') && Adapt.config.get('_audio')._isReducedTextEnabled && this.model.get('_reducedText') && this.model.get('_reducedText')._isEnabled) {
                 this.replaceText(Adapt.audio.textSize);
             }
         },
@@ -116,14 +116,22 @@ define(function(require) {
         // Reduced text
         replaceText: function(value) {
             // If enabled
-            if (this.model.get('_reducedText') && this.model.get('_reducedText')._isEnabled) {
+            if (Adapt.config.get('_audio') && Adapt.config.get('_audio')._isReducedTextEnabled && this.model.get('_reducedText') && this.model.get('_reducedText')._isEnabled) {
                 // Change component title and body
                 if(value == 0) {
-                    this.$('.component-title-inner').html(this.model.get('displayTitle')).a11y_text();
-                    this.$('.component-body-inner').html(this.model.get('body')).a11y_text();
+                    if (this.model.get('displayTitle')) {
+                        this.$('.component-title-inner').html(this.model.get('displayTitle')).a11y_text();
+                    }
+                    if (this.model.get('body')) {
+                        this.$('.component-body-inner').html(this.model.get('body')).a11y_text();
+                    }
                 } else {
-                    this.$('.component-title-inner').html(this.model.get('displayTitleReduced')).a11y_text();
-                    this.$('.component-body-inner').html(this.model.get('bodyReduced')).a11y_text();
+                    if (this.model.get('displayTitleReduced')) {
+                        this.$('.component-title-inner').html(this.model.get('displayTitleReduced')).a11y_text();
+                    }
+                    if (this.model.get('bodyReduced')) {
+                        this.$('.component-body-inner').html(this.model.get('bodyReduced')).a11y_text();
+                    }
                 }
                 // Change each items title and body
                 for (var i = 0; i < this.model.get('_items').length; i++) {
@@ -140,8 +148,8 @@ define(function(require) {
 
     });
 
-    Adapt.register('accordion', Accordion);
+    Adapt.register('accordion-audio', AccordionAudio);
 
-    return Accordion;
+    return AccordionAudio;
 
 });
