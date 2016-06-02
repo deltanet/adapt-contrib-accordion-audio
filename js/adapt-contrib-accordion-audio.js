@@ -23,14 +23,6 @@ define(function(require) {
             if (Adapt.config.get('_audio') && Adapt.config.get('_audio')._isReducedTextEnabled && this.model.get('_reducedText') && this.model.get('_reducedText')._isEnabled) {
                 this.replaceText(Adapt.audio.textSize);
             }
-<<<<<<< HEAD:js/adapt-contrib-accordion.js
-=======
-
-            // Check if completion is required, if not then set status to completed
-            if (!this.model.get('_isCompletionRequired')) {
-                this.setCompletionStatus();
-            }
->>>>>>> refs/remotes/origin/issue/#2:js/adapt-contrib-accordion-audio.js
         },
 
         // Used to check if the accordion should reset on revisit
