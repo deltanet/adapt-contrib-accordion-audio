@@ -20,7 +20,7 @@ define(function(require) {
         postRender: function() {
             this.setReadyStatus();
 
-            if (Adapt.config.get('_audio') && Adapt.config.get('_audio')._isReducedTextEnabled && this.model.get('_reducedText') && this.model.get('_reducedText')._isEnabled) {
+            if (Adapt.course.get('_audio') && Adapt.course.get('_audio')._reducedTextisEnabled && this.model.get('_audio') && this.model.get('_audio')._reducedTextisEnabled) {
                 this.replaceText(Adapt.audio.textSize);
             }
         },
@@ -82,7 +82,7 @@ define(function(require) {
 
         ///// Audio /////
         stopAudio: function() {
-            if (this.model.has('_audio') && this.model.get('_audio')._isEnabled) {
+            if (Adapt.course.get('_audio') && Adapt.course.get('_audio')._isEnabled && this.model.has('_audio') && this.model.get('_audio')._isEnabled) {
                 Adapt.trigger('audio:pauseAudio', this.model.get("_audio")._channel);
             }
         },
@@ -94,7 +94,7 @@ define(function(require) {
             this.checkCompletionStatus();
 
             ///// Audio /////
-            if (this.model.has('_audio') && this.model.get('_audio')._isEnabled && Adapt.audio.audioClip[this.model.get('_audio')._channel].status==1) {
+            if (Adapt.course.get('_audio') && Adapt.course.get('_audio')._isEnabled && this.model.has('_audio') && this.model.get('_audio')._isEnabled && Adapt.audio.audioClip[this.model.get('_audio')._channel].status==1) {
                 // Trigger audio
                 Adapt.trigger('audio:playAudio', item._audio.src, this.model.get('_id'), this.model.get('_audio')._channel);
             }
@@ -116,23 +116,7 @@ define(function(require) {
         // Reduced text
         replaceText: function(value) {
             // If enabled
-            if (Adapt.config.get('_audio') && Adapt.config.get('_audio')._isReducedTextEnabled && this.model.get('_reducedText') && this.model.get('_reducedText')._isEnabled) {
-                // Change component title and body
-                if(value == 0) {
-                    if (this.model.get('displayTitle')) {
-                        this.$('.component-title-inner').html(this.model.get('displayTitle')).a11y_text();
-                    }
-                    if (this.model.get('body')) {
-                        this.$('.component-body-inner').html(this.model.get('body')).a11y_text();
-                    }
-                } else {
-                    if (this.model.get('displayTitleReduced')) {
-                        this.$('.component-title-inner').html(this.model.get('displayTitleReduced')).a11y_text();
-                    }
-                    if (this.model.get('bodyReduced')) {
-                        this.$('.component-body-inner').html(this.model.get('bodyReduced')).a11y_text();
-                    }
-                }
+            if (Adapt.course.get('_audio') && Adapt.course.get('_audio')._reducedTextisEnabled && this.model.get('_audio') && this.model.get('_audio')._reducedTextisEnabled) {
                 // Change each items title and body
                 for (var i = 0; i < this.model.get('_items').length; i++) {
                     if(value == 0) {
@@ -145,7 +129,6 @@ define(function(require) {
                 }
             }
         }
-
     });
 
     Adapt.register('accordion-audio', AccordionAudio);
