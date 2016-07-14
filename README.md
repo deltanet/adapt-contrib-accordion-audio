@@ -13,7 +13,7 @@ Accodion audio must be manually installed in the adapt framework and authoring t
 
 ## Settings Overview
 
-The attributes listed below are used in *components.json* to configure **Accordion audio**, and are properly formatted as JSON in [*example.json*](https://github.com/deltanet/adapt-contrib-accordion-audio/blob/master/example.json). 
+The attributes listed below are used in *components.json* to configure **Accordion audio**, and are properly formatted as JSON in [*example.json*](https://github.com/deltanet/adapt-contrib-accordion-audio/blob/master/example.json).
 
 ### Attributes
 
@@ -21,7 +21,7 @@ The attributes listed below are used in *components.json* to configure **Accordi
 
 **_component** (string): This value must be: `accordion`.
 
-**_classes** (string): CSS class name to be applied to **Accordion**’s containing div. The class must be predefined in one of the Less files. Separate multiple classes with a space.
+**_classes** (string): CSS class name to be applied to **Accordion**’s containing div. The class must be predefined in one of the Less files. Separate multiple classes with a space. A predefined CSS class can be applied to an Accordion Item.
 
 **_layout** (string): This defines the horizontal position of the component in the block. Acceptable values are `full`, `left` or `right`.  
 
@@ -38,12 +38,14 @@ guide the learner’s interaction with the component.
 
 >>**src** (string): File name (including path) of the image. Path should be relative to the *src* folder (e.g., *course/en/images/c-45-1.jpg*).
 
->>**alt** (string): This text becomes the image’s `alt` attribute. 
+>>**alt** (string): This text becomes the image’s `alt` attribute.
+
+>**_classes** (string): An optional class that will be applied to the Accordion Item.
 
 ### Accessibility
-**Accordion** has been assigned a label using the [aria-label](https://github.com/adaptlearning/adapt_framework/wiki/Aria-Labels) attribute: **ariaRegion**. This label is not a visible element. It is utilized by assistive technology such as screen readers. Should the region's text need to be customised, it can be found within the **globals** object in [*properties.schema*](https://github.com/adaptlearning/adapt-contrib-accordion-audio/blob/master/properties.schema).   
-<div float align=right><a href="#top">Back to Top</a></div> 
 
+**Accordion** has been assigned a label using the [aria-label](https://github.com/adaptlearning/adapt_framework/wiki/Aria-Labels) attribute: **ariaRegion**. This label is not a visible element. It is utilized by assistive technology such as screen readers. Should the region's text need to be customised, it can be found within the **globals** object in [*properties.schema*](https://github.com/deltanet/adapt-contrib-accordion-audio/blob/master/properties.schema).   
+<div float align=right><a href="#top">Back to Top</a></div>
 
 ## Limitations
 
@@ -51,7 +53,7 @@ Body graphics are displayed only when `"layout": "full"`. On a mobile device, a 
 
 
 ----------------------------
-**Version number:**  2.0.7 
+**Version number:**  2.0.7
 **Framework versions:** 2.0  
 **Author / maintainer:** DeltaNet (Forked from Adapt Core Team)  
 **Accessibility support:** WAI AA   
