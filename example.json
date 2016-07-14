@@ -10,8 +10,6 @@
   "displayTitle": "Accordion",
   "body": "This is optional body text. Select the headings below to reveal the text.",
   "instruction": "",
-  "displayTitleReduced": "Reduced title",
-  "bodyReduced": "Reduced text",
   "_items": [
     {
       "title": "Heading 1",
@@ -52,8 +50,5 @@
           "src": "course/en/audio/***.mp3"
       }
     }
-  ],
-  "_reducedText": {
-      "_isEnabled": true
-  }
+  ]
 }
