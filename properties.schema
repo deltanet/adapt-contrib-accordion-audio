@@ -30,6 +30,18 @@
       "help": "This is the instruction text",
       "translatable": true
     },
+    "_shouldCollapseItems": {
+			"type": "boolean",
+			"required": false,
+			"default": true,
+			"title": "Items should auto-collapse",
+			"inputType": {
+				"type": "Boolean",
+				"options": [true, false]
+			},
+			"validators": [],
+			"help": "If set to 'false', upon expansion of an accordion item, any previously expanded items will not be collapsed"
+		},
     "_items": {
       "type": "array",
       "required": true,
@@ -99,6 +111,15 @@
                 "help": "Optional image which will be rendered with the item body text"
               }
             }
+          },
+          "_classes": {
+            "type":"string",
+            "required": false,
+            "default": "",
+            "title": "Classes",
+            "inputType": "Text",
+            "validators": [],
+            "help": "Classes that are applied to the Accordion Item"
           },
           "_audio": {
             "type": "object",
