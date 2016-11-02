@@ -9,6 +9,7 @@
   "displayTitle": "Accordion",
   "body": "This is optional body text. Select the headings below to reveal the text.",
   "instruction": "",
+  "_shouldCollapseItems": true,
   "_items": [
     {
       "title": "Heading 1",
@@ -17,7 +18,10 @@
         "src": "course/en/images/example.jpg",
         "alt": "accordion item 1 graphic alt text here."
       },
-      "_classes": "image-left"
+      "_classes": "image-left",
+      "_audio": {
+          "src": "course/en/audio/***.mp3"
+      }
     },
     {
       "title": "Heading 2",
@@ -26,7 +30,10 @@
         "src": "course/en/images/example.jpg",
         "alt": "accordion item 2 graphic alt text here."
       },
-      "_classes": ""
+      "_classes": "",
+      "_audio": {
+          "src": "course/en/audio/***.mp3"
+      }
     },
     {
       "title": "Heading 3",
@@ -35,7 +42,10 @@
         "src": "course/en/images/example.jpg",
         "alt": "accordion item 3 graphic alt text here."
       },
-      "_classes": "image-right"
+      "_classes": "image-right",
+      "_audio": {
+          "src": "course/en/audio/***.mp3"
+      }
     }
   ]
 }
