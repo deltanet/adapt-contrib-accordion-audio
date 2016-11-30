@@ -62,11 +62,11 @@
           },
           "titleReduced": {
             "type": "string",
-            "required": true,
+            "required": false,
             "inputType": "Text",
             "title": "Reduced Text Item Title",
             "default": "",
-            "validators": ["required"],
+            "validators": [],
             "translatable": true
           },
           "body": {
@@ -81,11 +81,11 @@
           },
           "bodyReduced": {
             "type": "string",
-            "required": true,
+            "required": false,
             "inputType": "TextArea",
             "title": "Reduced Text Item Body",
             "default": "",
-            "validators": ["required"],
+            "validators": [],
             "translatable": true
           },
           "_graphic": {
