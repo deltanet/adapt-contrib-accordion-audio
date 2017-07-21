@@ -1,14 +1,14 @@
 # adapt-contrib-accordion-audio
 
-<img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/accordion01.gif" alt="accordion in action" align="right">  **Accordion** is a *presentation component* bundled with the [Adapt framework](https://github.com/adaptlearning/adapt_framework).  
+<img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/accordion01.gif" alt="accordion in action" align="right">  **Accordion Audio** is a *presentation component* bundled with the [Adapt framework](https://github.com/adaptlearning/adapt_framework).  
 
 The component displays a vertically stacked list of headings. Each heading is associated with a collapsible content panel. Clicking a heading toggles the visibility of its content panel. Content panels may contain text and/or an image.
 
-##Installation
+## Installation
 
 Accodion audio must be manually installed in the adapt framework and authoring tool.
 
-* If **Accordion** has been uninstalled from the Adapt authoring tool, it may be reinstalled using the [Plug-in Manager](https://github.com/adaptlearning/adapt_authoring/wiki/Plugin-Manager).  
+If **Accordion Audio** has been uninstalled from the Adapt authoring tool, it may be reinstalled using the [Plug-in Manager](https://github.com/adaptlearning/adapt_authoring/wiki/Plugin-Manager).  
 <div float align=right><a href="#top">Back to Top</a></div>
 
 ## Settings Overview
@@ -21,7 +21,7 @@ The attributes listed below are used in *components.json* to configure **Accordi
 
 **_component** (string): This value must be: `accordion`.
 
-**_classes** (string): CSS class name to be applied to **Accordion**’s containing div. The class must be predefined in one of the Less files. Separate multiple classes with a space. A predefined CSS class can be applied to an Accordion Item.
+**_classes** (string): CSS class name to be applied to **Accordion Audio**’s containing div. The class must be predefined in one of the Less files. Separate multiple classes with a space. A predefined CSS class can be applied to an Accordion Item.
 
 **_layout** (string): This defines the horizontal position of the component in the block. Acceptable values are `full`, `left` or `right`.  
 
@@ -40,17 +40,18 @@ guide the learner’s interaction with the component.
 
 >>**alt** (string): This text becomes the image’s `alt` attribute.
 
+>>**attribution** (string): Optional text to be displayed as an [attribution](https://wiki.creativecommons.org/Best_practices_for_attribution). By default it is displayed below the image. Adjust positioning by modifying CSS. Text can contain HTML tags, e.g., `Copyright © 2015 by <b>Lukasz 'Severiaan' Grela</b>`.
+
 >**_classes** (string): An optional class that will be applied to the Accordion Item.
 
 ### Accessibility
 
-**Accordion** has been assigned a label using the [aria-label](https://github.com/adaptlearning/adapt_framework/wiki/Aria-Labels) attribute: **ariaRegion**. This label is not a visible element. It is utilized by assistive technology such as screen readers. Should the region's text need to be customised, it can be found within the **globals** object in [*properties.schema*](https://github.com/deltanet/adapt-contrib-accordion-audio/blob/master/properties.schema).   
+**Accordion Audio** has been assigned a label using the [aria-label](https://github.com/adaptlearning/adapt_framework/wiki/Aria-Labels) attribute: **ariaRegion**. This label is not a visible element. It is utilized by assistive technology such as screen readers. Should the region's text need to be customised, it can be found within the **globals** object in [*properties.schema*](https://github.com/deltanet/adapt-contrib-accordion-audio/blob/master/properties.schema).   
 <div float align=right><a href="#top">Back to Top</a></div>
 
 ## Limitations
 
-Body graphics are displayed only when `"layout": "full"`. On a mobile device, a fully spanned **Accordion** will be reduced to single-width. At this smaller size the graphic will not be displayed.  
-
+Body graphics are displayed only when `"layout": "full"`. On a mobile device, a fully spanned **Accordion Audio** will be reduced to single-width. At this smaller size the graphic will not be displayed.  
 
 ----------------------------
 **Version number:**  2.0.11
