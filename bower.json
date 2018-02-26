@@ -1,17 +1,13 @@
 {
   "name": "adapt-contrib-accordion-audio",
-  "version": "2.0.12",
-  "framework": "^2.0.0",
+  "version": "2.1.2",
+  "framework": ">=2",
   "homepage": "https://github.com/deltanet/adapt-contrib-accordion-audio",
   "issues": "https://github.com/deltanet/adapt-contrib-accordion-audio/issues",
   "description": "An audio enabled accordion component that displays clickable titles, which reveal display text",
   "main": "/js/adapt-contrib-accordion-audio.js",
   "displayName" : "Accordion Audio",
   "component" : "accordion-audio",
-  "assetFields" : [
-    "_items[]._graphic.src",
-    "_items[]._audio.src"
-  ],
   "keywords": [
     "adapt-plugin",
     "adapt-component"

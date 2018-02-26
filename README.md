@@ -54,8 +54,8 @@ guide the learner’s interaction with the component.
 Body graphics are displayed only when `"layout": "full"`. On a mobile device, a fully spanned **Accordion Audio** will be reduced to single-width. At this smaller size the graphic will not be displayed.  
 
 ----------------------------
-**Version number:**  2.0.12
-**Framework versions:** 2.0  
+**Version number:**  2.1.2
+**Framework versions:** 2+  
 **Author / maintainer:** DeltaNet (Forked from Adapt Core Team)  
 **Accessibility support:** WAI AA   
 **RTL support:** yes  
