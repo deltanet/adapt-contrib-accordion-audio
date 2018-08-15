@@ -6,13 +6,13 @@
             <button role="button" class="base accordion-item-title {{#if _isVisited}}visited{{/if}}" aria-expanded="false" aria-label="{{{a11y_normalize title}}}">
               <div class="accordion-item-title-inner">
                 <div class="accordion-item-title-icon icon icon-plus h5"></div>
-                <div class="accordion-item-title-text">{{{title}}}</div>
+                <div class="accordion-item-title-text">{{{compile title}}}</div>
               </div>
             </button>
             <div class="accordion-item-body">
                 <div class="accordion-item-body-inner">
                     <div class="accordion-item-text">
-                        {{{a11y_text body}}}
+                        {{{compile_a11y_text body}}}
                     </div>
                     {{#if _graphic}}
                     {{#if _graphic.src}}
