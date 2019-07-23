@@ -1,6 +1,7 @@
 define([
+    'core/js/adapt',
     'core/js/views/componentView'
-], function(ComponentView) {
+], function(Adapt, ComponentView) {
 
     var AccordionView = ComponentView.extend({
 
@@ -17,6 +18,9 @@ define([
                 'change:_isActive': this.onItemsActiveChange,
                 'change:_isVisited': this.onItemsVisitedChange
             });
+
+            // Listen for text change on audio extension
+            this.listenTo(Adapt, "audio:changeText", this.replaceText);
         },
 
         postRender: function() {
@@ -24,6 +28,10 @@ define([
 
             if (this.model.get('_setCompletionOn') === 'inview') {
                 this.setupInviewCompletion();
+            }
+
+            if (Adapt.audio && Adapt.course.get('_audio')._reducedTextisEnabled && this.model.get('_audio') && this.model.get('_audio')._reducedTextisEnabled) {
+                this.replaceText(Adapt.audio.textSize);
             }
         },
 
@@ -67,16 +75,51 @@ define([
 
             if (!shouldExpand) {
                 $body.slideUp(this.model.get('_toggleSpeed'));
+                this.stopAudio();
                 return;
             }
 
             $body.slideDown(this.model.get('_toggleSpeed'));
+
+            this.playAudio(item);
         },
 
         getItemElement: function(item) {
             var index = item.get('_index');
 
             return this.$('.accordion-item').filter('[data-index="' + index +'"]');
+        },
+
+        playAudio: function(item) {
+          if (Adapt.audio && this.model.has('_audio') && this.model.get('_audio')._isEnabled && Adapt.audio.audioClip[this.model.get('_audio')._channel].status==1) {
+              // Reset onscreen id
+              Adapt.audio.audioClip[this.model.get('_audio')._channel].onscreenID = "";
+              // Trigger audio
+              Adapt.trigger('audio:playAudio', item.get('_audio').src, this.model.get('_id'), this.model.get('_audio')._channel);
+            }
+        },
+
+        stopAudio: function() {
+            if (Adapt.course.get('_audio') && Adapt.course.get('_audio')._isEnabled && this.model.has('_audio') && this.model.get('_audio')._isEnabled) {
+                Adapt.trigger('audio:pauseAudio', this.model.get("_audio")._channel);
+            }
+        },
+
+        // Reduced text
+        replaceText: function(value) {
+            // If enabled
+            if (Adapt.audio && Adapt.course.get('_audio')._reducedTextisEnabled && this.model.get('_audio') && this.model.get('_audio')._reducedTextisEnabled) {
+                // Change each items title and body
+                for (var i = 0; i < this.model.get('_items').length; i++) {
+                    if (value == 0) {
+                        this.$('.accordion-item-title-text').eq(i).html(this.model.get('_items')[i].title);
+                        this.$('.accordion-item-body-inner').eq(i).html(this.model.get('_items')[i].body);
+                    } else {
+                        this.$('.accordion-item-title-text').eq(i).html(this.model.get('_items')[i].titleReduced);
+                        this.$('.accordion-item-body-inner').eq(i).html(this.model.get('_items')[i].bodyReduced);
+                    }
+                }
+            }
         }
 
     });
