@@ -6,7 +6,7 @@ The component displays a vertically stacked list of headings. Each heading is as
 
 ## Installation
 
-Accodion audio must be manually installed in the adapt framework and authoring tool.
+Accordion audio must be manually installed in the adapt framework and authoring tool.
 
 If **Accordion Audio** has been uninstalled from the Adapt authoring tool, it may be reinstalled using the [Plug-in Manager](https://github.com/adaptlearning/adapt_authoring/wiki/Plugin-Manager).  
 <div float align=right><a href="#top">Back to Top</a></div>
@@ -19,7 +19,7 @@ The attributes listed below are used in *components.json* to configure **Accordi
 
 [**core model attributes**](https://github.com/adaptlearning/adapt_framework/wiki/Core-model-attributes): These are inherited by every Adapt component. [Read more](https://github.com/adaptlearning/adapt_framework/wiki/Core-model-attributes).
 
-**_component** (string): This value must be: `accordion`.
+**_component** (string): This value must be: `accordion-audio`.
 
 **_classes** (string): CSS class name to be applied to **Accordion Audio**’s containing div. The class must be predefined in one of the Less files. Separate multiple classes with a space. A predefined CSS class can be applied to an Accordion Item.
 
@@ -44,6 +44,10 @@ guide the learner’s interaction with the component.
 
 >**_classes** (string): An optional class that will be applied to the Accordion Item.
 
+**_shouldCollapseItems** (boolean): Used to control the auto-collapse of other expanded Accordion items whenever an item is clicked/expanded. Defaulted to 'true'
+
+**_setCompletionOn** (string): Determines when the component registers as complete. Acceptable values are `"allItems"` and `"inview"`. `"allItems"` (the default) requires the learner to view every single accordion item; `"inview"` requires only that the component has been viewed (i.e. passed completely through the browser viewport).
+
 ### Accessibility
 
 **Accordion Audio** has been assigned a label using the [aria-label](https://github.com/adaptlearning/adapt_framework/wiki/Aria-Labels) attribute: **ariaRegion**. This label is not a visible element. It is utilized by assistive technology such as screen readers. Should the region's text need to be customised, it can be found within the **globals** object in [*properties.schema*](https://github.com/deltanet/adapt-contrib-accordion-audio/blob/master/properties.schema).   
@@ -54,10 +58,10 @@ guide the learner’s interaction with the component.
 Body graphics are displayed only when `"layout": "full"`. On a mobile device, a fully spanned **Accordion Audio** will be reduced to single-width. At this smaller size the graphic will not be displayed.  
 
 ----------------------------
-**Version number:**  2.1.3  
-**Framework versions:** 2+  
+**Version number:**  3.0.0  
+**Framework versions:** 3.3+  
 **Author / maintainer:** DeltaNet (Forked from Adapt Core Team)  
 **Accessibility support:** WAI AA   
 **RTL support:** yes  
-**Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), IE 11, IE10, IE9, IE8, IE Mobile 11, Safari for iPhone (iOS 7+8), Safari for iPad (iOS 7+8), Safari 8, Opera    
+**Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), Edge, IE 11, IE Mobile 11, Safari 11+12 for macOS+iOS, Opera    
 **Authoring tool support:** yes

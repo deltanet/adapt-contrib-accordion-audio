@@ -1,7 +1,7 @@
 {
   "name": "adapt-contrib-accordion-audio",
-  "version": "2.1.3",
-  "framework": ">=2",
+  "version": "3.0.0",
+  "framework": ">=3.3",
   "homepage": "https://github.com/deltanet/adapt-contrib-accordion-audio",
   "issues": "https://github.com/deltanet/adapt-contrib-accordion-audio/issues",
   "description": "An audio enabled accordion component that displays clickable titles, which reveal display text",
