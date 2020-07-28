@@ -21,6 +21,8 @@ define([
 
             // Listen for text change on audio extension
             this.listenTo(Adapt, "audio:changeText", this.replaceText);
+
+            this.listenToOnce(Adapt, "remove", this.removeListeners);
         },
 
         postRender: function() {
@@ -33,6 +35,16 @@ define([
             if (Adapt.audio && Adapt.course.get('_audio')._reducedTextisEnabled && this.model.get('_audio') && this.model.get('_audio')._reducedTextisEnabled) {
                 this.replaceText(Adapt.audio.textSize);
             }
+
+            $('.'+this.model.get('_id')).on('onscreen', _.bind(this.onscreen, this));
+        },
+
+        onscreen: function(event, measurements) {
+            this.measurementFromTop = Math.round(measurements.top);
+        },
+
+        removeListeners: function() {
+            $('.'+this.model.get('_id')).off('onscreen');
         },
 
         checkIfResetOnRevisit: function() {
@@ -65,6 +77,8 @@ define([
         toggleItem: function(item, shouldExpand) {
             var $item = this.getItemElement(item);
             var $body = $item.children('.accordion-item-body').stop(true, true);
+
+            Adapt.scrollTo("." + this.model.get('_id'), { duration: this.model.get('_toggleSpeed'), offset: {top: -this.measurementFromTop} });
 
             $item.children('.accordion-item-title')
                 .toggleClass('selected', shouldExpand)
