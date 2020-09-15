@@ -78,7 +78,7 @@ define([
             var $item = this.getItemElement(item);
             var $body = $item.children('.accordion-item-body').stop(true, true);
 
-            Adapt.scrollTo("." + this.model.get('_id'), { duration: this.model.get('_toggleSpeed'), offset: {top: -this.measurementFromTop} });
+            Adapt.scrollTo("." + this.model.get('_id'), { duration: 400 });
 
             $item.children('.accordion-item-title')
                 .toggleClass('selected', shouldExpand)
