@@ -1,39 +1,25 @@
-# adapt-contrib-accordion
+# adapt-contrib-accordion-audio
 
-<img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/accordion01.gif" alt="accordion in action" align="right">  **Accordion** is a *presentation component* bundled with the [Adapt framework](https://github.com/adaptlearning/adapt_framework).
+<img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/accordion01.gif" alt="accordion in action" align="right">  **Accordion audio** is a *presentation component* bundled with the [Adapt framework](https://github.com/adaptlearning/adapt_framework).
 
 The component displays a vertically stacked list of headings. Each heading is associated with a collapsible content panel. Clicking a heading toggles the visibility of its content panel. Content panels may contain text and/or an image.
 
-[Visit the **Accordion** wiki](https://github.com/adaptlearning/adapt-contrib-accordion/wiki) for more information about its functionality and for explanations of key properties.
 
 ## Installation
 
-As one of Adapt's *[core components](https://github.com/adaptlearning/adapt_framework/wiki/Core-Plug-ins-in-the-Adapt-Learning-Framework#components),* **Accordion** is included with the [installation of the Adapt framework](https://github.com/adaptlearning/adapt_framework/wiki/Manual-installation-of-the-Adapt-framework#installation) and the [installation of the Adapt authoring tool](https://github.com/adaptlearning/adapt_authoring/wiki/Installing-Adapt-Origin).
-
-* If **Accordion** has been uninstalled from the Adapt framework, it may be reinstalled.
-With the [Adapt CLI](https://github.com/adaptlearning/adapt-cli) installed, run the following from the command line:
-`adapt install adapt-contrib-accordion`
-
-    Alternatively, this component can also be installed by adding the following line of code to the *adapt.json* file:
-    `"adapt-contrib-accordion": "*"`
-    Then running the command:
-    `adapt install`
-    (This second method will reinstall all plug-ins listed in *adapt.json*.)
-
-* If **Accordion** has been uninstalled from the Adapt authoring tool, it may be reinstalled using the [Plug-in Manager](https://github.com/adaptlearning/adapt_authoring/wiki/Plugin-Manager).
-<div float align=right><a href="#top">Back to Top</a></div>
+Accordion audio must be manually installed in the adapt framework and authoring tool.
 
 ## Settings Overview
 
-The attributes listed below are used in *components.json* to configure **Accordion**, and are properly formatted as JSON in [*example.json*](https://github.com/adaptlearning/adapt-contrib-accordion/blob/master/example.json). Visit the [**Accordion** wiki](https://github.com/adaptlearning/adapt-contrib-accordion/wiki) for more information about how they appear in the [authoring tool](https://github.com/adaptlearning/adapt_authoring/wiki).
+The attributes listed below are used in *components.json* to configure **Accordion audio**, and are properly formatted as JSON in [*example.json*](https://github.com/adaptlearning/adapt-contrib-accordion/blob/master/example.json). Visit the [**Accordion audio** wiki](https://github.com/adaptlearning/adapt-contrib-accordion/wiki) for more information about how they appear in the [authoring tool](https://github.com/adaptlearning/adapt_authoring/wiki).
 
 ### Attributes
 
 [**core model attributes**](https://github.com/adaptlearning/adapt_framework/wiki/Core-model-attributes): These are inherited by every Adapt component. [Read more](https://github.com/adaptlearning/adapt_framework/wiki/Core-model-attributes).
 
-**\_component** (string): This value must be: `accordion`.
+**\_component** (string): This value must be: `accordion-audio`.
 
-**\_classes** (string): CSS class name to be applied to **Accordion**’s containing div. The class must be predefined in one of the Less files. Separate multiple classes with a space.
+**\_classes** (string): CSS class name to be applied to **Accordion audio**’s containing div. The class must be predefined in one of the Less files. Separate multiple classes with a space.
 
 **\_layout** (string): This defines the horizontal position of the component in the block. Acceptable values are `full`, `left` or `right`.
 
@@ -61,7 +47,7 @@ guide the learner’s interaction with the component.
 >**\_classes** (string): An optional class that will be applied to the Accordion Item. Supported classes are `"align-image-left"` and `"align-image-right"` which aligns the item image to the left or right in desktop view. On smaller screens the item image defaults underneath the item body text. Additional classes can be used but they must be predefined in one of the Less files. Separate multiple classes with a space.
 
 ### Accessibility
-**Accordion** has been assigned a label using the [aria-label](https://github.com/adaptlearning/adapt_framework/wiki/Aria-Labels) attribute: **ariaRegion**. This label is not a visible element. It is utilized by assistive technology such as screen readers. Should the region's text need to be customised, it can be found within the **globals** object in [*properties.schema*](https://github.com/adaptlearning/adapt-contrib-accordion/blob/master/properties.schema).
+**Accordion audio** has been assigned a label using the [aria-label](https://github.com/adaptlearning/adapt_framework/wiki/Aria-Labels) attribute: **ariaRegion**. This label is not a visible element. It is utilized by assistive technology such as screen readers. Should the region's text need to be customised, it can be found within the **globals** object in [*properties.schema*](https://github.com/adaptlearning/adapt-contrib-accordion/blob/master/properties.schema).
 <div float align=right><a href="#top">Back to Top</a></div>
 
 ## Limitations
@@ -72,7 +58,7 @@ No known limitations.
 
 **Version number:**  5.1.0   <a href="https://community.adaptlearning.org/" target="_blank"><img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/adapt-logo-mrgn-lft.jpg" alt="adapt learning logo" align="right"></a>  
 **Framework versions:** 5.5+  
-**Author / maintainer:** Adapt Core Team  
+**Author / maintainer:** DeltaNet (Forked from Adapt Core Team)  
 **Accessibility support:** WAI AA  
 **RTL support:** Yes  
 **Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), Edge, IE11, Safari 12+13 for macOS/iOS/iPadOS, Opera  

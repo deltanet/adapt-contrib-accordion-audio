@@ -61,6 +61,15 @@
             "help": "This is the item title",
             "translatable": true
           },
+          "titleReduced": {
+            "type": "string",
+            "required": false,
+            "inputType": "Text",
+            "title": "Reduced Text Item Title",
+            "default": "",
+            "validators": [],
+            "translatable": true
+          },
           "body": {
             "type": "string",
             "required": true,
@@ -69,6 +78,15 @@
             "default": "",
             "validators": ["required"],
             "help": "This is the item body text that is hidden until the item title is clicked on",
+            "translatable": true
+          },
+          "bodyReduced": {
+            "type": "string",
+            "required": false,
+            "inputType": "TextArea",
+            "title": "Reduced Text Item Body",
+            "default": "",
+            "validators": [],
             "translatable": true
           },
           "_graphic": {
@@ -112,6 +130,21 @@
             "inputType": "Text",
             "validators": [],
             "help": "Custom classes that are applied to the accordion item. Supported classes 'align-image-left' and 'align-image-right' are available to align item image to the left or right in desktop view. On smaller screens the item image defaults underneath the item body text. Additional classes can be used but they must be predefined in one of the Less files. Separate multiple classes with a space."
+          },
+          "_audio": {
+            "type": "object",
+            "required": false,
+            "title": "Item Audio",
+            "properties":{
+              "src": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "inputType": "Asset:audio",
+                "validators": [],
+                "help": "Optional audio which will be played with the item body text"
+              }
+            }
           }
         }
       }

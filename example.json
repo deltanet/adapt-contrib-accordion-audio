@@ -2,11 +2,11 @@
         "_id": "c-05",
         "_parentId": "b-05",
         "_type": "component",
-        "_component": "accordion",
+        "_component": "accordion-audio",
         "_classes": "",
         "_layout": "full",
-        "title": "Accordion",
-        "displayTitle": "Accordion Title",
+        "title": "Accordion Audio",
+        "displayTitle": "Accordion Audio Title",
         "body": "This is optional body text.",
         "instruction": "Select the headings below to reveal the text.",
         "_shouldCollapseItems": true,
@@ -22,7 +22,10 @@
                   "attribution": "Copyright © 2019"
               },
               "_comment": "Supported classes = 'align-image-left' | 'align-image-right'. Additional classes can be used but they must be predefined in one of the Less files",
-              "_classes": "align-image-left"
+              "_classes": "align-image-left",
+              "_audio": {
+                  "src": "course/en/audio/***.mp3"
+              }
             },
             {
               "title": "Heading 2",
@@ -32,7 +35,10 @@
                   "alt": "",
                   "attribution": ""
               },
-              "_classes": ""
+              "_classes": "",
+              "_audio": {
+                  "src": "course/en/audio/***.mp3"
+              }
             },
             {
               "title": "Heading 3",
@@ -42,7 +48,10 @@
                   "alt": "",
                   "attribution": ""
               },
-              "_classes": ""
+              "_classes": "",
+              "_audio": {
+                  "src": "course/en/audio/***.mp3"
+              }
             }
         ],
         "_pageLevelProgress": {
