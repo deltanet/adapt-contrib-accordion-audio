@@ -2,7 +2,7 @@ define([
   'core/js/models/itemsComponentModel'
 ], function(ItemsComponentModel) {
 
-  class AccordionModel extends ItemsComponentModel {
+  class AccordionAudioModel extends ItemsComponentModel {
 
     defaults() {
       return ItemsComponentModel.resultExtend('defaults', {
@@ -25,6 +25,6 @@ define([
 
   }
 
-  return AccordionModel;
+  return AccordionAudioModel;
 
 });

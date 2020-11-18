@@ -3,7 +3,7 @@ define([
   'core/js/views/componentView'
 ], function(Adapt, ComponentView) {
 
-  class AccordionView extends ComponentView {
+  class AccordionAudioView extends ComponentView {
 
     events() {
       return {
@@ -60,14 +60,14 @@ define([
 
       const $item = this.getItemElement(item);
 
-      $item.children('.accordion__item-btn').addClass('is-visited');
+      $item.children('.accordionaudio__item-btn').addClass('is-visited');
     }
 
     toggleItem(item, shouldExpand) {
       const $item = this.getItemElement(item);
-      const $body = $item.children('.accordion__item-content').stop(true, true);
+      const $body = $item.children('.accordionaudio__item-content').stop(true, true);
 
-      $item.children('.accordion__item-btn')
+      $item.children('.accordionaudio__item-btn')
         .toggleClass('is-selected is-open', shouldExpand)
         .toggleClass('is-closed', !shouldExpand)
         .attr('aria-expanded', shouldExpand);
@@ -85,7 +85,7 @@ define([
     getItemElement(item) {
       const index = item.get('_index');
 
-      return this.$('.accordion__item').filter(`[data-index="${index}"]`);
+      return this.$('.accordionaudio__item').filter(`[data-index="${index}"]`);
     }
 
     playAudio(item) {
@@ -110,19 +110,19 @@ define([
             // Change each items title and body
             for (var i = 0; i < this.model.get('_items').length; i++) {
                 if (value == 0) {
-                    this.$('.accordion__item-title-inner').eq(i).html(this.model.get('_items')[i].title);
-                    this.$('.accordion__item-body-inner').eq(i).html(this.model.get('_items')[i].body);
+                    this.$('.accordionaudio__item-title-inner').eq(i).html(this.model.get('_items')[i].title);
+                    this.$('.accordionaudio__item-body-inner').eq(i).html(this.model.get('_items')[i].body);
                 } else {
-                    this.$('.accordion__item-title-inner').eq(i).html(this.model.get('_items')[i].titleReduced);
-                    this.$('.accordion__item-body-inner').eq(i).html(this.model.get('_items')[i].bodyReduced);
+                    this.$('.accordionaudio__item-title-inner').eq(i).html(this.model.get('_items')[i].titleReduced);
+                    this.$('.accordionaudio__item-body-inner').eq(i).html(this.model.get('_items')[i].bodyReduced);
                 }
             }
         }
     }
   }
 
-  AccordionView.template = 'accordion-audio';
+  AccordionAudioView.template = 'accordion-audio';
 
-  return AccordionView;
+  return AccordionAudioView;
 
 });

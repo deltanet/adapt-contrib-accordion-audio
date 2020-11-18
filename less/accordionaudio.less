@@ -1,6 +1,6 @@
-.accordion {
+.accordionaudio {
   overflow-anchor: none;
-  
+
   &__item-btn {
     width: 100%;
   }
@@ -26,14 +26,14 @@
   // Turn off margin when image is left / right aligned on desktop
   // --------------------------------------------------
   &__item.has-image {
-    .accordion__item-body {
+    .accordionaudio__item-body {
       margin-bottom: @item-padding / 2;
     }
 
     @media (min-width: @device-width-medium) {
       &.align-image-left,
       &.align-image-right {
-        .accordion__item-body {
+        .accordionaudio__item-body {
           margin-bottom: 0;
         }
       }
@@ -49,42 +49,42 @@
   @media (min-width: @device-width-medium) {
     &__item.align-image-left,
     &__item.align-image-right {
-      .accordion__item-content-inner {
+      .accordionaudio__item-content-inner {
         display: flex;
         align-items: flex-start;
       }
 
-      .accordion__item-body,
-      .accordion__item-image-container {
+      .accordionaudio__item-body,
+      .accordionaudio__item-image-container {
         width: 50%;
       }
     }
 
     &__item.align-image-left {
-      .accordion__item-content-inner {
+      .accordionaudio__item-content-inner {
         flex-direction: row-reverse;
       }
 
-      .accordion__item-image-container {
+      .accordionaudio__item-image-container {
         margin-right: @item-padding / 2;
       }
 
-      .dir-rtl & .accordion__item-image-container {
+      .dir-rtl & .accordionaudio__item-image-container {
         margin-right: inherit;
         margin-left: @item-padding / 2;
       }
     }
 
     &__item.align-image-right {
-      .accordion__item-content-inner {
+      .accordionaudio__item-content-inner {
         flex-direction: row;
       }
 
-      .accordion__item-image-container {
+      .accordionaudio__item-image-container {
         margin-left: @item-padding / 2;
       }
 
-      .dir-rtl & .accordion__item-image-container {
+      .dir-rtl & .accordionaudio__item-image-container {
         margin-left: inherit;
         margin-right: @item-padding / 2;
       }

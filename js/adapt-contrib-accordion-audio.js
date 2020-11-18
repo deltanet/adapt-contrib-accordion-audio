@@ -2,11 +2,11 @@ define([
   'core/js/adapt',
   './accordionModel',
   './accordionView'
-], function(Adapt, AccordionModel, AccordionView) {
+], function(Adapt, AccordionAudioModel, AccordionAudioView) {
 
   return Adapt.register('accordion-audio', {
-    model: AccordionModel,
-    view: AccordionView
+    model: AccordionAudioModel,
+    view: AccordionAudioView
   });
 
 });
